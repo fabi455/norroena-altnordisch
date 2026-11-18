@@ -1,0 +1,9 @@
+# Build outputs
+.gradle/
+**/build/
+*.apk
+*.aab
+*.jks
+*.keystore
+__pycache__/
+.DS_Store
