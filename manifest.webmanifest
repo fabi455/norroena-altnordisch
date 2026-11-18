@@ -1,0 +1,19 @@
+{
+  "name": "Norrœna – Altnordisch lernen",
+  "short_name": "Norrœna",
+  "description": "Altnordisch mit Hörbeispielen und interaktiven Lektionen lernen.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#142c2b",
+  "icons": [
+    {
+      "src": "icons/norroena.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
