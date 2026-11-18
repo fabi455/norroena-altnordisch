@@ -21,15 +21,17 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Install Android 35
-        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - name: Install Android SDK 35
+        run: |
+          SDK_MANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)"
+          test -n "$SDK_MANAGER"
+          yes | "$SDK_MANAGER" --licenses > /dev/null || true
+          "$SDK_MANAGER" "platforms;android-35" "build-tools;35.0.0"
       - name: Install offline audio tools
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq espeak ffmpeg
-      - name: Generate 127 offline pronunciation MP3 clips
+      - name: Generate offline pronunciation MP3 clips
         run: python3 tools/generate_audio.py
       - name: Build installable Android APK
         working-directory: android
