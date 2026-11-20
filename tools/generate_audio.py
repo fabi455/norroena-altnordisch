@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Norrœna's 128 offline audio samples with a natural Icelandic neural voice.
+"""Generate Norrœna's 127 distinct offline audio samples with a natural Icelandic neural voice.
 
 CAUTION: This is modern Icelandic TTS, not reconstructed Old Norse pronunciation.
 The voice is obtained at build time; the Android app has no internet dependency.
@@ -31,13 +31,19 @@ def collect():
     )
     items = [item for lesson in lessons for item in lesson["words"] + lesson["phrases"]]
     ids = [item["id"] for item in items]
-    if len(lessons) != 8 or len(items) != 128 or len(set(ids)) != len(items):
-        raise RuntimeError(
-            f"Erwartet: 8 Lektionen, 128 eindeutige Audios; gefunden: {len(lessons)} / {len(items)}"
-        )
+    if len(lessons) != 8 or len(items) != 128:
+        raise RuntimeError(f"Erwartet: 8 Lektionen, 128 Übungseinträge; gefunden: {len(lessons)} / {len(items)}")
     if any(not item["term"].strip() for item in items):
         raise RuntimeError("Leerer Sprechertext")
-    return items
+    unique = {}
+    for item in items:
+        previous = unique.get(item["id"])
+        if previous and previous["term"] != item["term"]:
+            raise RuntimeError(f"Identische ID für verschiedene Hörtexte: {item['id']}")
+        unique[item["id"]] = item
+    if len(unique) != 127:
+        raise RuntimeError(f"Erwartet: 127 eindeutige Hörtexte, gefunden: {len(unique)}")
+    return list(unique.values())
 
 
 def valid_mp3(path):
@@ -77,10 +83,10 @@ async def main():
     AUDIO_DIR.mkdir(exist_ok=True)
     semaphore = asyncio.Semaphore(CONCURRENCY)
     files = await asyncio.gather(*(one(item, semaphore) for item in items))
-    if len(files) != 128 or not all(valid_mp3(p) for p in files):
+    if len(files) != 127 or not all(valid_mp3(p) for p in files):
         raise RuntimeError("MP3-Validierung fehlgeschlagen")
     print(
-        f"OK: 128 gültige MP3-Dateien, "
+        f"OK: 127 gültige MP3-Dateien, "
         f"{sum(p.stat().st_size for p in files) / 1048576:.2f} MiB, "
         f"Neuralstimme: {VOICE}",
         flush=True,
