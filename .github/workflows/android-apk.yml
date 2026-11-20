@@ -34,10 +34,10 @@ jobs:
           "$SDK_MANAGER" "platforms;android-35" "build-tools;35.0.0"
       - name: Install neural Icelandic text-to-speech engine
         run: python3 -m pip install --disable-pip-version-check 'edge-tts==7.3.1'
-      - name: Generate all 128 Icelandic neural MP3s
+      - name: Generate all 127 unique Icelandic neural MP3s
         run: |
           python3 tools/generate_audio.py
-          test "$(find audio -type f -name '*.mp3' | wc -l)" -eq 128
+          test "$(find audio -type f -name '*.mp3' | wc -l)" -eq 127
       - name: Build installable offline Android APK
         working-directory: android
         run: gradle --no-daemon :app:assembleDebug
