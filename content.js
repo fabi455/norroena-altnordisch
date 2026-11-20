@@ -6,7 +6,7 @@ window.NORROENA_CONTENT = [
     "minutes": 12,
     "tag": "Grundlagen",
     "intro": "Deine ersten altnordischen Wörter. Beginne mit Pronomen und einer historischen Begrüßung.",
-    "tip": "Die Zeichen þ und ð sind zwei verschiedene „th“-Laute. þ ist stimmlos wie englisch think, ð stimmhaft wie englisch this. In den Aufnahmen hörst du eine synthetische isländische Annäherung.",
+    "tip": "Die Zeichen þ und ð sind zwei verschiedene „th“-Laute. þ ist stimmlos wie englisch think, ð stimmhaft wie englisch this. In den Aufnahmen hörst du eine natürlichere neuronale moderne isländische Stimme. Die historische Aussprache war teilweise anders.",
     "words": [
       {
         "id": "w_cbed88164a",
