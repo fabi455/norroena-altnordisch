@@ -1,6 +1,6 @@
 # Norrœna – Altnordisch lernen ⚔️
 
-Eine kostenlose deutschsprachige Offline-Lern-App für Altwestnordisch – mit **8 Lektionen**, **96 Vokabeleinträgen**, **32 Satzbeispielen**, Karteikarten, Quiz, Lernfortschritt und **128 natürlich klingenden, synthetischen Hörbeispielen**.
+Eine kostenlose deutschsprachige Offline-Lern-App für Altwestnordisch – mit **8 Lektionen**, **96 Vokabeleinträgen**, **32 Satzbeispielen**, Karteikarten, Quiz, Lernfortschritt und **127 natürlich klingenden, synthetischen Hörbeispielen**.
 
 > **Aussprache-Hinweis:** Die Tonbeispiele werden mit einer neuronalen **modernen isländischen Männerstimme Gunnar** erzeugt. Sie sind eine Annäherung für das Training, **keine authentische Rekonstruktion historischer altnordischer Aussprache**.
 
@@ -40,6 +40,6 @@ Bei Änderung von `main` wird der Android-Build erneut gestartet. APK-Artifacts 
 
 ## Version 1.1 – natürlicher klingende Hörbeispiele
 
-Die bisherige eSpeak-Stimme wurde durch die isländische **Neuralstimme Gunnar** (`is-IS-GunnarNeural`) ersetzt. Alle 128 Wörter und Sätze erhalten neue synthetische MP3-Hörbeispiele. Beim Erstellen der App wird die Neuralstimme online abgefragt; danach sind sämtliche Audiodateien **offline in der Android-App** enthalten. Die Stimme klingt flüssiger und weniger mechanisch, spricht aber **modernes Isländisch**, nicht das historisch rekonstruierte Altnordisch. Die Clips eignen sich als Hörhilfe und enthalten möglicherweise Fehler bei alten Wortformen. Der Build bricht bei einer unerreichbaren Sprachsynthese ab, statt alte eSpeak-Aufnahmen zu übernehmen.
+Die bisherige eSpeak-Stimme wurde durch die isländische **Neuralstimme Gunnar** (`is-IS-GunnarNeural`) ersetzt. Die 128 Übungseinträge teilen sich 127 verschiedene Hörtexte, für die neue synthetische MP3-Hörbeispiele erzeugt werden. Beim Erstellen der App wird die Neuralstimme online abgefragt; danach sind sämtliche Audiodateien **offline in der Android-App** enthalten. Die Stimme klingt flüssiger und weniger mechanisch, spricht aber **modernes Isländisch**, nicht das historisch rekonstruierte Altnordisch. Die Clips eignen sich als Hörhilfe und enthalten möglicherweise Fehler bei alten Wortformen. Der Build bricht bei einer unerreichbaren Sprachsynthese ab, statt alte eSpeak-Aufnahmen zu übernehmen.
 
 **Update-Hinweis:** Die APK ist für den Eigengebrauch mit einer Debug-Signatur signiert. Falls sich Version 1.1 nicht über Version 1.0 installieren lässt, vor dem Deinstallieren unter *Einstellungen → Sicherung exportieren* den Lernfortschritt sichern und anschließend in der neuen App importieren. Der Datenspeicherschlüssel `norroena-progress-v1` bleibt gleich.
