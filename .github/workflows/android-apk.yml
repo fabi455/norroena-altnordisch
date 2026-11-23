@@ -1,50 +1,163 @@
-name: Android APK – Norroena (Gunnar Neural)
+name: Norroena 1.2 – 16 Lektionen, adaptiv, Gunnar-Neural
 on:
   push:
     branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
+concurrency:
+  group: norroena-android-build
+  cancel-in-progress: true
+
 jobs:
-  build:
-    name: Build Norroena 1.1 with Icelandic neural speech
+  restore:
+    name: 127 ursprüngliche Gunnar-Hörproben wiederherstellen
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Set up Java 17
+      - name: Vorhandene Lerninhalte und Audios prüfen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          content=Path('content.js').read_text('utf8')
+          m=re.search(r'window\.NORROENA_CONTENT\s*=\s*(\[[\s\S]*?\]);\s*$',content)
+          assert m and json.loads(m.group(1))==json.loads(Path('content.json').read_text('utf8'))
+          print('Kursdaten identisch')
+          PY
+          python3 tools/restore_gunnar.py
+      - name: Originale Gunnar-MP3s speichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: norroena-original-gunnar
+          path: audio/*.mp3
+          if-no-files-found: error
+          retention-days: 14
+
+  synthesize:
+    name: Gunnar-Hörproben Gruppe ${{ matrix.part }}
+    needs: restore
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        part: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Alte Gunnar-Dateien bereitstellen
+        uses: actions/download-artifact@v4
+        with:
+          name: norroena-original-gunnar
+          path: audio
+      - name: Gunnar-Neural-Engine
+        run: python3 -m pip install 'edge-tts==7.3.1'
+      - name: Neue altwestnordische Wörter und Sätze aufnehmen
+        run: |
+          python3 tools/generate_audio.py --reused audio --output generated \
+            --part ${{ matrix.part }} --parts 16
+      - name: Gunnar-Hörproben dieser Gruppe ablegen
+        uses: actions/upload-artifact@v4
+        with:
+          name: norroena-gunnar-part-${{ matrix.part }}
+          path: generated/
+          if-no-files-found: error
+          retention-days: 14
+
+  build:
+    name: Norrœna Android 1.2 + 255 Gunnar-MP3s
+    needs: [restore,synthesize]
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Java 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-      - name: Set up Gradle 8.9
+      - name: Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Install Android SDK 35
+      - name: Android SDK 35
         run: |
           SDK_MANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)"
           test -n "$SDK_MANAGER"
-          yes | "$SDK_MANAGER" --licenses > /dev/null || true
+          yes | "$SDK_MANAGER" --licenses >/dev/null || true
           "$SDK_MANAGER" "platforms;android-35" "build-tools;35.0.0"
-      - name: Install neural Icelandic text-to-speech engine
-        run: python3 -m pip install --disable-pip-version-check 'edge-tts==7.3.1'
-      - name: Generate all 127 unique Icelandic neural MP3s
+      - name: Bereits bekannte Gunnar-Audios laden
+        uses: actions/download-artifact@v4
+        with:
+          name: norroena-original-gunnar
+          path: audio
+      - name: Alle neuen Gunnar-Audios laden
+        uses: actions/download-artifact@v4
+        with:
+          pattern: norroena-gunnar-part-*
+          merge-multiple: true
+          path: generated
+      - name: Alle 255 Gunnar-Hörproben und Lerntexte validieren
         run: |
-          python3 tools/generate_audio.py
-          test "$(find audio -type f -name '*.mp3' | wc -l)" -eq 127
-      - name: Build installable offline Android APK
+          python3 -m pip install 'mutagen>=1.47,<2'
+          node --check app.js
+          node --check adaptive.js
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from mutagen.mp3 import MP3
+          lessons=json.loads(Path('content.json').read_text('utf-8'))
+          assert len(lessons)==16
+          ids={}
+          for l in lessons:
+            for w in l['words']+l['phrases']:
+              old=ids.get(w['id'])
+              assert old is None or old==w['term']
+              ids[w['id']]=w['term']
+          assert len(ids)==255
+          receipts=sorted(Path('generated').glob('gunnar-shard-*.json'))
+          assert len(receipts)==16,'Expected 16 completed Gunnar audio groups'
+          recorded=set()
+          for receipt in receipts:
+            data=json.loads(receipt.read_text('utf-8'))
+            assert data['voice']=='is-IS-GunnarNeural'
+            for id in data['ids']:
+              assert id not in recorded
+              recorded.add(id)
+          new_mp3=list(Path('generated').glob('*.mp3'))
+          assert len(new_mp3)==len(recorded)==128, (len(new_mp3),len(recorded))
+          for f in new_mp3:
+            assert f.stem in recorded and f.stem in ids
+            dest=Path('audio')/f.name
+            assert not dest.exists(),f"Unexpected overwrite {dest}"
+            dest.write_bytes(f.read_bytes())
+          all_mp3=list(Path('audio').glob('*.mp3'))
+          assert {f.stem for f in all_mp3}==set(ids)
+          for f in all_mp3:
+            assert MP3(str(f)).info.length>0.09,f"Invalid MP3: {f}"
+          print('OK: 16 Lektionen, 192 Vokabeln, 64 Beispielsätze, 255 Gunnar-MP3s')
+          PY
+      - name: Build installable Android APK
         working-directory: android
         run: gradle --no-daemon :app:assembleDebug
-      - name: Publish Android APK
+      - name: Gunnar-Android-APK zum Download anbieten
         uses: actions/upload-artifact@v4
         with:
-          name: Norroena-1.1-Neural-APK
+          name: Norroena-1.2-Adaptiv-Gunnar-Android
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 90
