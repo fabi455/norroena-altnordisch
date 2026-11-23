@@ -750,5 +750,757 @@ window.NORROENA_CONTENT = [
       }
     ],
     "id": "l8"
+  },
+  {
+    "title": "Reisen & Richtungen",
+    "subtitle": "Wege, Gegenden und Fahrten",
+    "symbol": "ᚱ",
+    "tag": "Unterwegs",
+    "intro": "Erkunde Richtungen, Orte an der Küste und Wege zwischen Siedlungen.",
+    "tip": "Die Richtungsadverbien austr, vestr, norðr und suðr bezeichnen eine Bewegung oder Lage in Himmelsrichtungen. Der Wortschatz folgt vereinfachter altwestnordischer Standardschreibung.",
+    "words": [
+      {
+        "id": "w09_01_v12",
+        "term": "haf",
+        "meaning": "Meer; offenes Meer"
+      },
+      {
+        "id": "w09_02_v12",
+        "term": "ey",
+        "meaning": "Insel"
+      },
+      {
+        "id": "w09_03_v12",
+        "term": "hǫfn",
+        "meaning": "Hafen"
+      },
+      {
+        "id": "w09_04_v12",
+        "term": "fjǫrðr",
+        "meaning": "Fjord"
+      },
+      {
+        "id": "w09_05_v12",
+        "term": "dalr",
+        "meaning": "Tal"
+      },
+      {
+        "id": "w09_06_v12",
+        "term": "bær",
+        "meaning": "Hof; Siedlung"
+      },
+      {
+        "id": "w09_07_v12",
+        "term": "vegr",
+        "meaning": "Weg"
+      },
+      {
+        "id": "w09_08_v12",
+        "term": "brú",
+        "meaning": "Brücke"
+      },
+      {
+        "id": "w09_09_v12",
+        "term": "norðr",
+        "meaning": "nach Norden; im Norden"
+      },
+      {
+        "id": "w09_10_v12",
+        "term": "suðr",
+        "meaning": "nach Süden; im Süden"
+      },
+      {
+        "id": "w09_11_v12",
+        "term": "austr",
+        "meaning": "nach Osten; im Osten"
+      },
+      {
+        "id": "w09_12_v12",
+        "term": "vestr",
+        "meaning": "nach Westen; im Westen"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p09_01_v12",
+        "term": "Hann fer austr.",
+        "meaning": "Er reist nach Osten."
+      },
+      {
+        "id": "p09_02_v12",
+        "term": "Hér er bær.",
+        "meaning": "Hier ist ein Hof."
+      },
+      {
+        "id": "p09_03_v12",
+        "term": "Ek sé ey.",
+        "meaning": "Ich sehe eine Insel."
+      },
+      {
+        "id": "p09_04_v12",
+        "term": "Hafit er kalt.",
+        "meaning": "Das Meer ist kalt."
+      }
+    ],
+    "minutes": 14,
+    "id": "l9"
+  },
+  {
+    "title": "Tiere & Wildnis",
+    "subtitle": "Tiere in Hof, Wald und Erzählung",
+    "symbol": "ᛉ",
+    "tag": "Natur",
+    "intro": "Lerne Namen vertrauter Tiere, Vögel und Wildtiere kennen.",
+    "tip": "Bei maskulinen Wörtern wie hundr oder hestr endet die Grundform häufig auf -r. In der Akkusativform kann das -r wegfallen: ek sé hund.",
+    "words": [
+      {
+        "id": "w10_01_v12",
+        "term": "hestr",
+        "meaning": "Pferd"
+      },
+      {
+        "id": "w10_02_v12",
+        "term": "hundr",
+        "meaning": "Hund"
+      },
+      {
+        "id": "w10_03_v12",
+        "term": "kǫttr",
+        "meaning": "Katze; Kater"
+      },
+      {
+        "id": "w10_04_v12",
+        "term": "kýr",
+        "meaning": "Kuh"
+      },
+      {
+        "id": "w10_05_v12",
+        "term": "naut",
+        "meaning": "Rind"
+      },
+      {
+        "id": "w10_06_v12",
+        "term": "sauðr",
+        "meaning": "Schaf"
+      },
+      {
+        "id": "w10_07_v12",
+        "term": "geit",
+        "meaning": "Ziege"
+      },
+      {
+        "id": "w10_08_v12",
+        "term": "svín",
+        "meaning": "Schwein"
+      },
+      {
+        "id": "w10_09_v12",
+        "term": "fugl",
+        "meaning": "Vogel"
+      },
+      {
+        "id": "w10_10_v12",
+        "term": "hrafn",
+        "meaning": "Rabe"
+      },
+      {
+        "id": "w10_11_v12",
+        "term": "úlfr",
+        "meaning": "Wolf"
+      },
+      {
+        "id": "w10_12_v12",
+        "term": "fiskr",
+        "meaning": "Fisch"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p10_01_v12",
+        "term": "Hér er hestr.",
+        "meaning": "Hier ist ein Pferd."
+      },
+      {
+        "id": "p10_02_v12",
+        "term": "Ek sé hund.",
+        "meaning": "Ich sehe einen Hund."
+      },
+      {
+        "id": "p10_03_v12",
+        "term": "Þetta er kýr.",
+        "meaning": "Das ist eine Kuh."
+      },
+      {
+        "id": "p10_04_v12",
+        "term": "Hrafn er fugl.",
+        "meaning": "Ein Rabe ist ein Vogel."
+      }
+    ],
+    "minutes": 14,
+    "id": "l10"
+  },
+  {
+    "title": "Haus & Gegenstände",
+    "subtitle": "Dinge im Haus und auf dem Hof",
+    "symbol": "ᚺ",
+    "tag": "Alltag",
+    "intro": "Benennungen für Einrichtung, Werkzeuge und Gegenstände.",
+    "tip": "Wörter wie borð (Tisch) und þak (Dach) sind sächlich. Das Wort dyrr bezeichnet die Tür und wird gewöhnlich im Plural verwendet.",
+    "words": [
+      {
+        "id": "w11_01_v12",
+        "term": "dyrr",
+        "meaning": "Tür (Pluralwort)"
+      },
+      {
+        "id": "w11_02_v12",
+        "term": "borð",
+        "meaning": "Tisch"
+      },
+      {
+        "id": "w11_03_v12",
+        "term": "stóll",
+        "meaning": "Stuhl"
+      },
+      {
+        "id": "w11_04_v12",
+        "term": "rúm",
+        "meaning": "Raum; Platz"
+      },
+      {
+        "id": "w11_05_v12",
+        "term": "gluggr",
+        "meaning": "Fensteröffnung"
+      },
+      {
+        "id": "w11_06_v12",
+        "term": "lykill",
+        "meaning": "Schlüssel"
+      },
+      {
+        "id": "w11_07_v12",
+        "term": "knífr",
+        "meaning": "Messer"
+      },
+      {
+        "id": "w11_08_v12",
+        "term": "skál",
+        "meaning": "Schale"
+      },
+      {
+        "id": "w11_09_v12",
+        "term": "kista",
+        "meaning": "Truhe"
+      },
+      {
+        "id": "w11_10_v12",
+        "term": "bók",
+        "meaning": "Buch"
+      },
+      {
+        "id": "w11_11_v12",
+        "term": "ljós",
+        "meaning": "Licht"
+      },
+      {
+        "id": "w11_12_v12",
+        "term": "þak",
+        "meaning": "Dach"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p11_01_v12",
+        "term": "Þetta er borð.",
+        "meaning": "Das ist ein Tisch."
+      },
+      {
+        "id": "p11_02_v12",
+        "term": "Hér er bók.",
+        "meaning": "Hier ist ein Buch."
+      },
+      {
+        "id": "p11_03_v12",
+        "term": "Ek sé skál.",
+        "meaning": "Ich sehe eine Schale."
+      },
+      {
+        "id": "p11_04_v12",
+        "term": "Þetta er lykill.",
+        "meaning": "Das ist ein Schlüssel."
+      }
+    ],
+    "minutes": 14,
+    "id": "l11"
+  },
+  {
+    "title": "Essen & Trinken",
+    "subtitle": "Speisen, Getränke und Bedürfnisse",
+    "symbol": "ᛃ",
+    "tag": "Alltag",
+    "intro": "Finde wichtige Begriffe für Essen, Trinken und Vorräte.",
+    "tip": "Die Verben eta (essen) und drekka (trinken) sind stark. Ek et bedeutet „ich esse“, ek drekk bedeutet „ich trinke“.",
+    "words": [
+      {
+        "id": "w12_01_v12",
+        "term": "brauð",
+        "meaning": "Brot"
+      },
+      {
+        "id": "w12_02_v12",
+        "term": "mjólk",
+        "meaning": "Milch"
+      },
+      {
+        "id": "w12_03_v12",
+        "term": "kjǫt",
+        "meaning": "Fleisch"
+      },
+      {
+        "id": "w12_04_v12",
+        "term": "ostr",
+        "meaning": "Käse"
+      },
+      {
+        "id": "w12_05_v12",
+        "term": "smjǫr",
+        "meaning": "Butter"
+      },
+      {
+        "id": "w12_06_v12",
+        "term": "mjǫðr",
+        "meaning": "Met"
+      },
+      {
+        "id": "w12_07_v12",
+        "term": "ǫl",
+        "meaning": "Bier; Ale"
+      },
+      {
+        "id": "w12_08_v12",
+        "term": "hunang",
+        "meaning": "Honig"
+      },
+      {
+        "id": "w12_09_v12",
+        "term": "epli",
+        "meaning": "Apfel"
+      },
+      {
+        "id": "w12_10_v12",
+        "term": "egg",
+        "meaning": "Ei"
+      },
+      {
+        "id": "w12_11_v12",
+        "term": "hungr",
+        "meaning": "Hunger"
+      },
+      {
+        "id": "w12_12_v12",
+        "term": "þorsti",
+        "meaning": "Durst"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p12_01_v12",
+        "term": "Ek et brauð.",
+        "meaning": "Ich esse Brot."
+      },
+      {
+        "id": "p12_02_v12",
+        "term": "Ek drekk mjólk.",
+        "meaning": "Ich trinke Milch."
+      },
+      {
+        "id": "p12_03_v12",
+        "term": "Þetta er epli.",
+        "meaning": "Das ist ein Apfel."
+      },
+      {
+        "id": "p12_04_v12",
+        "term": "Hann drekk ǫl.",
+        "meaning": "Er trinkt Bier."
+      }
+    ],
+    "minutes": 14,
+    "id": "l12"
+  },
+  {
+    "title": "Körper & Leben",
+    "subtitle": "Menschen und Körperteile",
+    "symbol": "ᛒ",
+    "tag": "Wortschatz",
+    "intro": "Lerne gebräuchliche Wörter für den menschlichen Körper kennen.",
+    "tip": "Manche Formen verändern ihren Stamm in der Beugung: fótr wird im Plural zu fœtr, tǫnn zu tennr. Hier lernst du zunächst die Wörterbuchformen.",
+    "words": [
+      {
+        "id": "w13_01_v12",
+        "term": "hǫfuð",
+        "meaning": "Kopf"
+      },
+      {
+        "id": "w13_02_v12",
+        "term": "auga",
+        "meaning": "Auge"
+      },
+      {
+        "id": "w13_03_v12",
+        "term": "eyra",
+        "meaning": "Ohr"
+      },
+      {
+        "id": "w13_04_v12",
+        "term": "munnr",
+        "meaning": "Mund"
+      },
+      {
+        "id": "w13_05_v12",
+        "term": "hǫnd",
+        "meaning": "Hand"
+      },
+      {
+        "id": "w13_06_v12",
+        "term": "fótr",
+        "meaning": "Fuß"
+      },
+      {
+        "id": "w13_07_v12",
+        "term": "hjarta",
+        "meaning": "Herz"
+      },
+      {
+        "id": "w13_08_v12",
+        "term": "blóð",
+        "meaning": "Blut"
+      },
+      {
+        "id": "w13_09_v12",
+        "term": "bein",
+        "meaning": "Knochen; Bein"
+      },
+      {
+        "id": "w13_10_v12",
+        "term": "tǫnn",
+        "meaning": "Zahn"
+      },
+      {
+        "id": "w13_11_v12",
+        "term": "hár",
+        "meaning": "Haar"
+      },
+      {
+        "id": "w13_12_v12",
+        "term": "líf",
+        "meaning": "Leben"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p13_01_v12",
+        "term": "Þetta er hǫnd.",
+        "meaning": "Das ist eine Hand."
+      },
+      {
+        "id": "p13_02_v12",
+        "term": "Ek sé blóð.",
+        "meaning": "Ich sehe Blut."
+      },
+      {
+        "id": "p13_03_v12",
+        "term": "Hjarta er sterkt.",
+        "meaning": "Ein Herz ist stark."
+      },
+      {
+        "id": "p13_04_v12",
+        "term": "Hann er heill.",
+        "meaning": "Er ist unversehrt."
+      }
+    ],
+    "minutes": 14,
+    "id": "l13"
+  },
+  {
+    "title": "Handlungen & Verben",
+    "subtitle": "Gehen, lesen, schreiben und finden",
+    "symbol": "ᛏ",
+    "tag": "Grammatik",
+    "intro": "Mehr Verben, um über Tätigkeiten und Handlungen zu sprechen.",
+    "tip": "Beachte die Personalformen: ganga → ek geng; sitja → hann sitr; lesa → ek les. Die Verben sind nicht alle gleich flektiert.",
+    "words": [
+      {
+        "id": "w14_01_v12",
+        "term": "ganga",
+        "meaning": "gehen"
+      },
+      {
+        "id": "w14_02_v12",
+        "term": "hlaupa",
+        "meaning": "laufen; rennen"
+      },
+      {
+        "id": "w14_03_v12",
+        "term": "sitja",
+        "meaning": "sitzen"
+      },
+      {
+        "id": "w14_04_v12",
+        "term": "standa",
+        "meaning": "stehen"
+      },
+      {
+        "id": "w14_05_v12",
+        "term": "vinna",
+        "meaning": "arbeiten; gewinnen"
+      },
+      {
+        "id": "w14_06_v12",
+        "term": "læra",
+        "meaning": "lernen"
+      },
+      {
+        "id": "w14_07_v12",
+        "term": "skrifa",
+        "meaning": "schreiben"
+      },
+      {
+        "id": "w14_08_v12",
+        "term": "lesa",
+        "meaning": "lesen"
+      },
+      {
+        "id": "w14_09_v12",
+        "term": "kaupa",
+        "meaning": "kaufen"
+      },
+      {
+        "id": "w14_10_v12",
+        "term": "selja",
+        "meaning": "verkaufen"
+      },
+      {
+        "id": "w14_11_v12",
+        "term": "biðja",
+        "meaning": "bitten; beten"
+      },
+      {
+        "id": "w14_12_v12",
+        "term": "finna",
+        "meaning": "finden"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p14_01_v12",
+        "term": "Ek geng.",
+        "meaning": "Ich gehe."
+      },
+      {
+        "id": "p14_02_v12",
+        "term": "Hann sitr.",
+        "meaning": "Er sitzt."
+      },
+      {
+        "id": "p14_03_v12",
+        "term": "Ek les bók.",
+        "meaning": "Ich lese ein Buch."
+      },
+      {
+        "id": "p14_04_v12",
+        "term": "Ek finn vin.",
+        "meaning": "Ich finde einen Freund."
+      }
+    ],
+    "minutes": 14,
+    "id": "l14"
+  },
+  {
+    "title": "Recht & Gemeinschaft",
+    "subtitle": "Versammlung, Frieden und Worte",
+    "symbol": "ᛞ",
+    "tag": "Geschichte",
+    "intro": "Begriffe für Gemeinschaft, Beratungen und Streitbeilegung.",
+    "tip": "Ein þing ist eine Versammlung mit rechtlichen und politischen Aufgaben. Lǫg heißt „Gesetze; Recht“. Die Beispielsätze dienen zum Üben einfacher Formen.",
+    "words": [
+      {
+        "id": "w15_01_v12",
+        "term": "þing",
+        "meaning": "Thing; Versammlung"
+      },
+      {
+        "id": "w15_02_v12",
+        "term": "lǫg",
+        "meaning": "Gesetze; Recht (Plural)"
+      },
+      {
+        "id": "w15_03_v12",
+        "term": "dómr",
+        "meaning": "Urteil"
+      },
+      {
+        "id": "w15_04_v12",
+        "term": "sætt",
+        "meaning": "Einigung; Versöhnung"
+      },
+      {
+        "id": "w15_05_v12",
+        "term": "friðr",
+        "meaning": "Frieden"
+      },
+      {
+        "id": "w15_06_v12",
+        "term": "óvinr",
+        "meaning": "Feind"
+      },
+      {
+        "id": "w15_07_v12",
+        "term": "lið",
+        "meaning": "Gefolgschaft; Truppe"
+      },
+      {
+        "id": "w15_08_v12",
+        "term": "þjóð",
+        "meaning": "Volk"
+      },
+      {
+        "id": "w15_09_v12",
+        "term": "ráð",
+        "meaning": "Rat; Beschluss"
+      },
+      {
+        "id": "w15_10_v12",
+        "term": "orð",
+        "meaning": "Wort"
+      },
+      {
+        "id": "w15_11_v12",
+        "term": "svar",
+        "meaning": "Antwort"
+      },
+      {
+        "id": "w15_12_v12",
+        "term": "saga",
+        "meaning": "Erzählung; Sage"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p15_01_v12",
+        "term": "Þetta er gott ráð.",
+        "meaning": "Das ist ein guter Rat."
+      },
+      {
+        "id": "p15_02_v12",
+        "term": "Hér er þing.",
+        "meaning": "Hier ist eine Thingversammlung."
+      },
+      {
+        "id": "p15_03_v12",
+        "term": "Þetta er saga.",
+        "meaning": "Das ist eine Erzählung."
+      },
+      {
+        "id": "p15_04_v12",
+        "term": "Friðr er góðr.",
+        "meaning": "Frieden ist gut."
+      }
+    ],
+    "minutes": 14,
+    "id": "l15"
+  },
+  {
+    "title": "Götter & Sagas",
+    "subtitle": "Mythische Namen und Dichtung",
+    "symbol": "ᛟ",
+    "tag": "Mythologie",
+    "intro": "Begegne Namen und Begriffen aus der nordischen Mythologie und der Dichtung.",
+    "tip": "Die Wörter hier gehören zur Überlieferung und Mythologie. Ein áss ist ein Angehöriger der Asen; goð kann „Gottheit“ bedeuten. Die Aussprache der Hörproben ist modernes Isländisch, nicht rekonstruierte Wikingerzeit.",
+    "words": [
+      {
+        "id": "w16_01_v12",
+        "term": "áss",
+        "meaning": "Ase (Gott aus dem Asengeschlecht)"
+      },
+      {
+        "id": "w16_02_v12",
+        "term": "goð",
+        "meaning": "Gottheit; Gott"
+      },
+      {
+        "id": "w16_03_v12",
+        "term": "Óðinn",
+        "meaning": "Odin"
+      },
+      {
+        "id": "w16_04_v12",
+        "term": "Þórr",
+        "meaning": "Thor"
+      },
+      {
+        "id": "w16_05_v12",
+        "term": "Freyja",
+        "meaning": "Freyja (Göttin)"
+      },
+      {
+        "id": "w16_06_v12",
+        "term": "Miðgarðr",
+        "meaning": "Midgard; Menschenwelt"
+      },
+      {
+        "id": "w16_07_v12",
+        "term": "Ásgarðr",
+        "meaning": "Asgard; Götterwelt"
+      },
+      {
+        "id": "w16_08_v12",
+        "term": "Yggdrasill",
+        "meaning": "Yggdrasil (Weltenbaum)"
+      },
+      {
+        "id": "w16_09_v12",
+        "term": "jǫtunn",
+        "meaning": "Riese; Jötunn"
+      },
+      {
+        "id": "w16_10_v12",
+        "term": "valkyrja",
+        "meaning": "Walküre"
+      },
+      {
+        "id": "w16_11_v12",
+        "term": "rún",
+        "meaning": "Rune; Geheimnis"
+      },
+      {
+        "id": "w16_12_v12",
+        "term": "skáld",
+        "meaning": "Dichter; Skalde"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "p16_01_v12",
+        "term": "Óðinn er áss.",
+        "meaning": "Odin ist ein Ase."
+      },
+      {
+        "id": "p16_02_v12",
+        "term": "Þórr er áss.",
+        "meaning": "Thor ist ein Ase."
+      },
+      {
+        "id": "p16_03_v12",
+        "term": "Þetta er rún.",
+        "meaning": "Das ist eine Rune."
+      },
+      {
+        "id": "p16_04_v12",
+        "term": "Skáld segir sǫgu.",
+        "meaning": "Ein Skalde erzählt eine Sage."
+      }
+    ],
+    "minutes": 14,
+    "id": "l16"
   }
 ];
