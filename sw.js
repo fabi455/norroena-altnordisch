@@ -1,5 +1,5 @@
-const VERSION = 'norroena-offline-v3-gunnar-neural';
-const CORE = ['./', './index.html', './style.css', './app.js', './content.js', './manifest.webmanifest', './icons/norroena.svg'];
+const VERSION = 'norroena-offline-v4-adaptiv-16';
+const CORE = ['./', './index.html', './style.css', './app.js', './content.js', './adaptive.js', './manifest.webmanifest', './icons/norroena.svg'];
 self.addEventListener('install', event => event.waitUntil((async () => {
   const cache = await caches.open(VERSION);
   await cache.addAll(CORE);
